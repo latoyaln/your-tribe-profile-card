@@ -1,57 +1,125 @@
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.container{
+  width: 100%;
+  min-height: 100vh;
+  padding: 10px;
+
 }
 
-html {
-  height: 100vh;
-}
-
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: 1em;
-  color: black;
-}
-
-article {
-  border: 2px solid black;
+.basics{
+  width: 50vw;
+  height: 43vh;
+  margin: 6em auto 0;
+  background: #fff;
   border-radius: 25px;
-  background: white;
   box-shadow: 0 0 20px 20px rgba(47, 103, 41, 0.1);
-  transition: .25s;
-  padding: 35px;
+  perspective: 1000px;
 }
-
-.basics {
-  display: inline-block;
-  align-items: left;
-  padding-right: 10px;
-  border-right: 1px solid green;
-}
- ul{
-  list-style-type: none;
-  margin: 0px;
-  padding: 0px;
-}
-
-
-img {
+.about{
+  width: 100%;
+  height: 100%;
   position: relative;
-  width: 50px;
-  padding: 2px;
-  border: 2px solid #fff;
-  border-radius: 10em;
-  box-shadow: 0 0 2px 2px rgba(0,0,0,.2);
-  transition: .25s .15s;
+  transition: transform 1s;
+  transform-style: preserve-3d;
 }
-svg .birthday{
-  fill: aqua;
-}
-.coding{
-  display: inline-block;
-  padding-left: 10px;
 
+.front, .back{
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.front{
+  background: url(/Users/latoyanijmeijer/Desktop/fdnd/sem1/your-tribe-profile-card/assets/backgroundswirls.jpg);
+  background-size: cover;
+  background-position: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-right: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #fff;
+  
+}
+.front h1{
+  font-weight: 400;
+}
+.front p{
+  font-size: 0.7em;
+}
+.front .info{
+  padding: 0em 0em 1em 1em;
+  border-bottom-right-radius: 25px;
+  background-color: #004526;
+}
+/*Hier zorg ik ervoor dat mijn lijst items geen icons voor de tekst krijgen en op 1 lijn staan*/
+.front ul{
+  list-style: none;
+  display: flex;
+  padding: 5px;
+}
+
+.front li{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.front li i{
+  padding-right: 15px;
+}
+
+.back{
+  background: #fff;
+  color: #333;
+  padding: 20px 40px;
+  transform: rotateY(180deg);
+}
+.back img{
+  max-width: 15%;
+}
+.back p{
+  font-size: 0.8em;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.back h1{
+  font-size: 1em;
+}
+.row{
+  display: flex;
+  align-items: center;
+}
+.col{
+  flex: 1;
+  text-align: center;
+  color: #004526;
+  font-size: 0.6em;
+  position: relative;
+}
+/*Hier zet ik streepjes tussen de verschillende col elementen*/
+.col::after{
+  content: '';
+  width: 0.1em;
+  height: 1em;
+  background: #004526;
+  position: absolute;
+  top: 0.4em;
+  right: 0;
+}
+/*Hier zorg ik ervoor dat naast het laatste element geen streepje is*/
+.col:last-child::after{
+display: none;
+}
+
+/*flipt de kaart bij hover*/
+
+.basics:hover .about{
+  transform: rotateY(180deg);
 }
