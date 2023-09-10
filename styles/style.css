@@ -13,25 +13,18 @@
 
 }
 
-/*Hier zorg ik ervoor dat mijn visitekaartje zelf een randje heeft.
+/*Hier zorg ik ervoor dat mijn visitekaartje zelf afgeronde hoeken heeft.
 Ook heb ik een schaduw achter het visitekaartje om hem iets naar voor te brengen
-Met perspective zorg ik dat het 3d effect perspectief heeft, ofwel hoe ver het visitekaartje
-is van de gebruiker.*/
-.basics{
+Met transition zorg ik ervoor dat de kaart 1.5 seconde duurt om te flippen
+Tranform style preserve 3d zorgt ervoor dat de kaart gepositioneert wordt in de 3d space 
+en niet plat komt*/
+.about{
   width: 50vw;
   height: 43vh;
   margin: 6em auto 0;
   background: #fff;
   border-radius: 2em;
   box-shadow: 0 0 20px 20px rgba(47, 103, 41, 0.1);
-}
-
-/*Met transition zorg ik ervoor dat de kaart 1.5 seconde duurt om te flippen
-Tranform style preserve 3d zorgt ervoor dat de kaart gepositioneert wordt in de 3d space 
-en niet plat komt*/
-.about{
-  width: 100%;
-  height: 100%;
   -webkit-transition: -webkit-transform 1.5s;
   transition: transform 1.5s;
   -webkit-transform-style: preserve-3d;
@@ -142,3 +135,4 @@ display: none;
 .basics:hover .about{
   transform: rotateY(180deg);
 }
+
