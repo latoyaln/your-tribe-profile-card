@@ -55,7 +55,7 @@ zorgt ervoor dat de achterkant ontzichtbaar blijft*/
 Met display flex zorg ik ervoor dat de elementen in 1 lijn blijven
 Met justify content zorg ik dsat de flex items lijnen aan de rechter eind*/
 .front{
-  background: url("/Users/latoyanijmeijer/Desktop/fdnd/sem1/your-tribe-profile-card/assets/backgroundswirls.jpg");
+  background-image: url("https://raw.githubusercontent.com/latoyaln/your-tribe-profile-card/main/assets/backgroundswirls.jpg");
   background-size: cover;
   background-position: center;
   padding-top: 40px;
