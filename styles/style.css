@@ -18,7 +18,7 @@ Ook heb ik een schaduw achter het visitekaartje om hem iets naar voor te brengen
 Met transition zorg ik ervoor dat de kaart 1.5 seconde duurt om te flippen
 Tranform style preserve 3d zorgt ervoor dat de kaart gepositioneert wordt in de 3d space 
 en niet plat komt*/
-.about{
+.about-cardla{
   width: 50vw;
   height: 43vh;
   margin: 6em auto 0;
@@ -33,7 +33,7 @@ en niet plat komt*/
 
 /*De positie absolute zorgt ervoor dat positie absoluut zo blijft. Backface visibility
 zorgt ervoor dat de achterkant ontzichtbaar blijft*/
-.front, .back{
+.cardla-front, .cardla-back{
   width: 100%;
   height: 100%;
   border-radius: 15px;
@@ -47,7 +47,7 @@ zorgt ervoor dat de achterkant ontzichtbaar blijft*/
 /*Bij backround zorg ik ervoor dat mijn afbeelding als achtergrond komt.
 Met display flex zorg ik ervoor dat de elementen in 1 lijn blijven
 Met justify content zorg ik dsat de flex items lijnen aan de rechter eind*/
-.front{
+.cardla-front{
   background-image: url("https://i.ibb.co/tb5BnBF/backgroundswirls.jpg");
   background-size: cover;
   background-position: center;
@@ -60,47 +60,47 @@ Met justify content zorg ik dsat de flex items lijnen aan de rechter eind*/
   color: #fff;
   
 }
-.front h1{
+.cardla-front h1{
   font-weight: 400;
 }
-.front p{
+.cardla-front p{
   font-size: 0.7em;
 }
-.front .info{
+.cardla-front .cardla-info{
   padding: 0em 0em 1em 1em;
   border-bottom-right-radius: 25px;
   background-color: #004526;
 }
 /*Hier zorg ik ervoor dat mijn lijst items geen icons voor de tekst krijgen en op 1 lijn staan*/
-.front ul{
+.cardla-front ul{
   list-style: none;
   display: flex;
   padding: 5px;
 }
 
-.front li{
+.cardla-front li{
   padding-left: 5px;
   padding-right: 5px;
 }
-.front li i{
+.cardla-front li i{
   padding-right: 15px;
 }
 /*Met transform rotate zorg ik ervoor dat het element rotate*/
-.back{
+.cardla-back{
   background: #fff;
   color: #333;
   padding: 20px 40px;
   transform: rotateY(180deg);
 }
-.back img{
+.cardla-back img{
   max-width: 15%;
 }
-.back p{
+.cardla-back p{
   font-size: 0.8em;
   line-height: 1.5;
   margin-bottom: 10px;
 }
-.back h1{
+.cardla-back h1{
   font-size: 1em;
 }
 .row{
@@ -132,7 +132,7 @@ display: none;
 
 /*flipt de kaart bij hover*/
 
-.basics:hover .about{
+.container:hover .about-cardla{
   transform: rotateY(180deg);
 }
 
