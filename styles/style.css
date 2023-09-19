@@ -3,14 +3,13 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 /*dit zorgt ervoor dat de container waar mijn visite kaartje in is een padding van 10 heeft*/
-.container{
+.container {
   width: 100%;
   min-height: 100vh;
   padding: 10px;
-
 }
 
 /*Hier zorg ik ervoor dat mijn visitekaartje zelf afgeronde hoeken heeft.
@@ -18,7 +17,7 @@ Ook heb ik een schaduw achter het visitekaartje om hem iets naar voor te brengen
 Met transition zorg ik ervoor dat de kaart 1.5 seconde duurt om te flippen
 Tranform style preserve 3d zorgt ervoor dat de kaart gepositioneert wordt in de 3d space 
 en niet plat komt*/
-.about-cardla{
+.about-cardla {
   width: 50vw;
   height: 43vh;
   margin: 6em auto 0;
@@ -33,7 +32,8 @@ en niet plat komt*/
 
 /*De positie absolute zorgt ervoor dat positie absoluut zo blijft. Backface visibility
 zorgt ervoor dat de achterkant ontzichtbaar blijft*/
-.cardla-front, .cardla-back{
+.cardla-front,
+.cardla-back {
   width: 100%;
   height: 100%;
   border-radius: 15px;
@@ -47,7 +47,7 @@ zorgt ervoor dat de achterkant ontzichtbaar blijft*/
 /*Bij backround zorg ik ervoor dat mijn afbeelding als achtergrond komt.
 Met display flex zorg ik ervoor dat de elementen in 1 lijn blijven
 Met justify content zorg ik dsat de flex items lijnen aan de rechter eind*/
-.cardla-front{
+.cardla-front {
   background-image: url("https://i.ibb.co/tb5BnBF/backgroundswirls.jpg");
   background-size: cover;
   background-position: center;
@@ -58,66 +58,72 @@ Met justify content zorg ik dsat de flex items lijnen aan de rechter eind*/
   flex-direction: column;
   justify-content: flex-end;
   color: #fff;
-  
 }
-.cardla-front h1{
+.cardla-front h1 {
   font-weight: 400;
 }
-.cardla-front p{
+.cardla-front p {
   font-size: 0.7em;
 }
-.cardla-front .cardla-info{
+.cardla-front .cardla-info {
   padding: 0em 0em 1em 1em;
   border-bottom-right-radius: 25px;
   background-color: #004526;
 }
 /*Hier zorg ik ervoor dat mijn lijst items geen icons voor de tekst krijgen en op 1 lijn staan*/
-.cardla-front ul{
+.cardla-front ul {
   list-style: none;
   display: flex;
   padding: 5px;
 }
 
-.cardla-front li{
+.cardla-front li {
   padding-left: 5px;
   padding-right: 5px;
 }
-.cardla-front li i{
+.cardla-front li i {
   padding-right: 15px;
 }
 /*Met transform rotate zorg ik ervoor dat het element rotate*/
-.cardla-back{
+.cardla-back {
   background: #fff;
   color: #333;
   padding: 20px 40px;
   transform: rotateY(180deg);
 }
-.cardla-back img{
+
+/* Styles for the flipped card */
+.about-cardla.flipped {
+  transform: rotateY(180deg);
+}
+
+.cardla-back img {
   max-width: 15%;
 }
-.cardla-back p{
+.cardla-back p {
   font-size: 0.8em;
   line-height: 1.5;
   margin-bottom: 10px;
 }
-.cardla-back h1{
-  font-size: 1em;
+.cardla-back p .talenln {
+  font-size: 1.5em;
+  font-weight: 800;
 }
-.row{
+.row {
   display: flex;
   align-items: center;
 }
 /*Hier kies ik ervoor om row en col te gebruiken om mijn tekst in 1 rij en column te zetten*/
-.col{
+.row h2 {
   flex: 1;
   text-align: center;
   color: #004526;
-  font-size: 0.6em;
+  font-size: 0.8em;
   position: relative;
 }
 /*Hier zet ik streepjes tussen de verschillende col elementen*/
-.col::after{
-  content: '';
+.row h2:not(:last-child)::after {
+  content: "";
   width: 0.1em;
   height: 1em;
   background: #004526;
@@ -125,14 +131,42 @@ Met justify content zorg ik dsat de flex items lijnen aan de rechter eind*/
   top: 0.4em;
   right: 0;
 }
-/*Hier zorg ik ervoor dat naast het laatste element geen streepje is*/
-.col:last-child::after{
-display: none;
-}
-
 /*flipt de kaart bij hover*/
 
-.container:hover .about-cardla{
+.container:hover .about-cardla {
   transform: rotateY(180deg);
 }
+/* Responsive style for mobile (S) screens */
+@media (max-width: 900px) {
+  .about-cardla {
+    width: 100%; 
+    height: 50vh; 
+  }
 
+  .cardla-front {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 0.8rem;
+  }
+
+  .cardla-front h1 {
+    font-size: 1rem; 
+  }
+  .cardla-front .cardla-info {
+    padding-bottom: 4rem;
+    padding-top: 2rem;
+  }
+
+  .cardla-front ul {
+    flex-direction: column;
+  }
+
+  .cardla-back {
+    font-size: 1rem; 
+  }
+
+  .row h2 {
+    font-size: 0.9em; 
+  }
+  
+}
